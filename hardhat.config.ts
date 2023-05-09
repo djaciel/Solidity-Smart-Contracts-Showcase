@@ -1,24 +1,25 @@
-import * as dotenv from 'dotenv';
+import * as dotenv from 'dotenv'
 
-import { HardhatUserConfig } from 'hardhat/config';
-import '@nomiclabs/hardhat-etherscan';
-import '@nomiclabs/hardhat-ethers';
-import '@nomiclabs/hardhat-waffle';
-import '@typechain/hardhat';
-import 'hardhat-gas-reporter';
-import 'solidity-coverage';
-import 'hardhat-contract-sizer';
-import 'hardhat-deploy';
-import 'hardhat-docgen';
-import 'hardhat-abi-exporter';
-import networks from './hardhat.network';
+import { HardhatUserConfig } from 'hardhat/config'
+import '@nomiclabs/hardhat-etherscan'
+import '@nomiclabs/hardhat-ethers'
+import '@nomiclabs/hardhat-waffle'
+import '@typechain/hardhat'
+import 'hardhat-gas-reporter'
+import 'solidity-coverage'
+import 'hardhat-contract-sizer'
+import 'hardhat-deploy'
+import 'hardhat-docgen'
+import 'hardhat-abi-exporter'
+import networks from './hardhat.network'
 
-dotenv.config();
+dotenv.config()
 
 const config: HardhatUserConfig = {
   defaultNetwork: 'hardhat',
   solidity: {
     compilers: [
+      { version: '0.6.12' },
       {
         version: '0.8.18',
         settings: {
@@ -27,7 +28,7 @@ const config: HardhatUserConfig = {
             runs: 200,
           },
         },
-      }
+      },
     ],
   },
   gasReporter: {
@@ -55,6 +56,6 @@ const config: HardhatUserConfig = {
     },
   },
   networks,
-};
+}
 
-export default config;
+export default config
